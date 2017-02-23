@@ -3,8 +3,8 @@
 
 angular.module('myapp')
   .controller("WeatherController", function($scope, $http){
+    $scope.entire = document.getElementById("entire").style.visibility = "hidden";
   
-    $scope.loading = true;
     if (navigator.geolocation) navigator.geolocation.getCurrentPosition(onPositionUpdate);
  
     function onPositionUpdate(position) {
@@ -70,8 +70,15 @@ angular.module('myapp')
             $scope.weatherNow.wind = $scope.weatherNow.wind_kph;
           }
         };
-        $scope.loading = true;
+        
       
+      })
+      .then(function(){
+        $scope.loader = document.getElementById("loader");
+        $scope.loader.style.visibility = "hidden";
+        $scope.loader.style.animationDuration = "0ms";
+        $scope.entire = document.getElementById("entire").style.visibility = "visible";
+    
       });
     }
   });
