@@ -27,7 +27,7 @@ angular.module('myapp')
             wind: null,
             imageSrc: info.data.current_observation.icon_url
           };
-          $scope.weatherNow.imgageSrc = $scope.weatherNow.imageSrc.replace("http", "https");
+          $scope.weatherNow.imageSrc = $scope.weatherNow.imageSrc.replace("http", "https");
           var currentTime = new Date();
           var hours = currentTime.getHours();
           var minutes = currentTime.getMinutes();
